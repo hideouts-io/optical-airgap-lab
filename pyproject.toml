@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "optical-airgap-lab"
+version = "0.1.0"
+description = "A closed-loop reproduction of low-contrast optical signaling from LCD screens"
+requires-python = ">=3.12"
+dependencies = [
+  "numpy>=2.2,<3",
+  "opencv-python-headless>=4.11,<5",
+  "pillow>=11,<13",
+  "qrcode>=8,<9",
+]
+
+[project.scripts]
+optical-render = "optical_airgap_lab.render_cli:main"
+optical-decode = "optical_airgap_lab.decode_cli:main"
+optical-estimate = "optical_airgap_lab.estimate_cli:main"
+optical-recover-fixture = "optical_airgap_lab.binary_recover_cli:main"
+optical-simulate = "optical_airgap_lab.simulate_cli:main"
+optical-render-fixture = "optical_airgap_lab.binary_render_cli:main"
+
+[dependency-groups]
+dev = [
+  "mypy>=1.15,<2",
+  "pytest>=8,<10",
+  "ruff>=0.9,<1",
+  "types-qrcode>=8,<9",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/optical_airgap_lab"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+packages = ["optical_airgap_lab"]

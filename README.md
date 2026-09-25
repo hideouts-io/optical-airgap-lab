@@ -1474,3 +1474,9 @@ is also available in [`docs/BINARY_TRANSFER_LAB.md`](docs/BINARY_TRANSFER_LAB.md
 M. Guri, "Optical air-gap exfiltration attack via invisible images," *Journal of Information
 Security and Applications*, vol. 46, pp. 222–230, 2019.
 [doi:10.1016/j.jisa.2019.02.004](https://doi.org/10.1016/j.jisa.2019.02.004)
+
+---
+
+## License
+
+Optical Air-Gap Lab is released under the [MIT License](LICENSE).

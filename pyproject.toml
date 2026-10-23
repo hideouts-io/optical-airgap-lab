@@ -10,7 +10,7 @@ requires-python = ">=3.12"
 dependencies = [
   "numpy>=2.2,<3",
   "opencv-python-headless>=4.11,<5",
-  "pillow>=11,<13",
+  "pillow>=11,<14",
   "qrcode>=8,<9",
 ]
 
